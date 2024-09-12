@@ -58,7 +58,7 @@ def get_predicted_value(patient_symptoms):
     return diseases_list[svc.predict([input_vector])[0]]
 
 # Route to handle predictions
-@app.route('http://127.0.0.1:5000/predict', methods=['GET', 'POST'])
+@app.route('/predict', methods=['GET', 'POST'])
 def home():
     if request.method == 'POST':
         username = request.form.get('username')

@@ -9,15 +9,15 @@ import mysql.connector  # Import MySQL connector
 app = Flask(__name__)
 
 # Load datasets
-sym_des = pd.read_csv("./clerk/Medicine-Recommendation-System-Personalized-Medical-Recommendation-System-with-Machine-Learning-main./symtoms_df.csv")
-precautions = pd.read_csv("./clerk/Medicine-Recommendation-System-Personalized-Medical-Recommendation-System-with-Machine-Learning-main./precautions_df.csv")
-workout = pd.read_csv("./clerk/Medicine-Recommendation-System-Personalized-Medical-Recommendation-System-with-Machine-Learning-main./workout_df.csv")
-description = pd.read_csv("./clerk/Medicine-Recommendation-System-Personalized-Medical-Recommendation-System-with-Machine-Learning-main./description.csv")
-medications = pd.read_csv("./clerk/Medicine-Recommendation-System-Personalized-Medical-Recommendation-System-with-Machine-Learning-main./medications.csv")
-diets = pd.read_csv("./clerk/Medicine-Recommendation-System-Personalized-Medical-Recommendation-System-with-Machine-Learning-main./diets.csv")
+sym_des = pd.read_csv("./symtoms_df.csv")
+precautions = pd.read_csv("./precautions_df.csv")
+workout = pd.read_csv("./workout_df.csv")
+description = pd.read_csv("./description.csv")
+medications = pd.read_csv("./medications.csv")
+diets = pd.read_csv("./diets.csv")
 
 # Load model
-svc = pickle.load(open('./clerk/Medicine-Recommendation-System-Personalized-Medical-Recommendation-System-with-Machine-Learning-main./svc.pkl','rb'))
+svc = pickle.load(open('./svc.pkl','rb'))
 
 # Database connection function
 def get_db_connection():
